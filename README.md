@@ -167,6 +167,11 @@ A: 在管理员 PowerShell 中先执行：
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
+或者如果不想修改系统策略，也可以用这个一次性绕过的方式直接运行：
+```powershell
+PowerShell -ExecutionPolicy Bypass -File .\cleanup_disk.ps1 -DryRun
+```
+
 
 **Q: 清理后系统变慢了？**  
 A: Prefetch 和缩略图缓存清理后，系统需要一段时间重建，属于正常现象，重启后恢复正常。
